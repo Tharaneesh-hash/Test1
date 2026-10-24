@@ -1,0 +1,51 @@
+{
+    "class_codes": [
+        "CHP",
+        "CWP",
+        "HEALTHY",
+        "HFMD",
+        "MKP",
+        "MSL"
+    ],
+    "class_names": [
+        "Chickenpox",
+        "Cowpox",
+        "Healthy",
+        "HFMD",
+        "Monkeypox",
+        "Measles"
+    ],
+    "code_to_name": {
+        "CHP": "Chickenpox",
+        "CWP": "Cowpox",
+        "HEALTHY": "Healthy",
+        "HFMD": "HFMD",
+        "MKP": "Monkeypox",
+        "MSL": "Measles"
+    },
+    "num_classes": 6,
+    "class_to_idx": {
+        "CHP": 0,
+        "CWP": 1,
+        "HEALTHY": 2,
+        "HFMD": 3,
+        "MKP": 4,
+        "MSL": 5
+    },
+    "idx_to_class": {
+        "0": "CHP",
+        "1": "CWP",
+        "2": "HEALTHY",
+        "3": "HFMD",
+        "4": "MKP",
+        "5": "MSL"
+    },
+    "idx_to_name": {
+        "0": "Chickenpox",
+        "1": "Cowpox",
+        "2": "Healthy",
+        "3": "HFMD",
+        "4": "Monkeypox",
+        "5": "Measles"
+    }
+}

@@ -1,0 +1,198 @@
+{
+    "methodology": "Validation-set risk-coverage threshold tuning (no test set leakage)",
+    "selected_threshold": 0.53,
+    "validation_samples_count": 144,
+    "expected_calibration_error": 0.17387696893678772,
+    "calibration_bins": [
+        {
+            "bin_lower": 0.30000000000000004,
+            "bin_upper": 0.4,
+            "sample_count": 3,
+            "accuracy": 1.0,
+            "confidence": 0.35871994495391846,
+            "calibration_gap": 0.6412800550460815
+        },
+        {
+            "bin_lower": 0.4,
+            "bin_upper": 0.5,
+            "sample_count": 16,
+            "accuracy": 0.625,
+            "confidence": 0.4481089115142822,
+            "calibration_gap": 0.17689108848571777
+        },
+        {
+            "bin_lower": 0.5,
+            "bin_upper": 0.6000000000000001,
+            "sample_count": 18,
+            "accuracy": 0.6111111111111112,
+            "confidence": 0.5572950839996338,
+            "calibration_gap": 0.05381602711147737
+        },
+        {
+            "bin_lower": 0.6000000000000001,
+            "bin_upper": 0.7000000000000001,
+            "sample_count": 16,
+            "accuracy": 0.5625,
+            "confidence": 0.6482619047164917,
+            "calibration_gap": 0.0857619047164917
+        },
+        {
+            "bin_lower": 0.7000000000000001,
+            "bin_upper": 0.8,
+            "sample_count": 15,
+            "accuracy": 0.4,
+            "confidence": 0.7571329474449158,
+            "calibration_gap": 0.35713294744491575
+        },
+        {
+            "bin_lower": 0.8,
+            "bin_upper": 0.9,
+            "sample_count": 19,
+            "accuracy": 0.6842105263157895,
+            "confidence": 0.847265362739563,
+            "calibration_gap": 0.1630548364237735
+        },
+        {
+            "bin_lower": 0.9,
+            "bin_upper": 1.0,
+            "sample_count": 57,
+            "accuracy": 0.8070175438596491,
+            "confidence": 0.9734784364700317,
+            "calibration_gap": 0.16646089261038266
+        }
+    ],
+    "threshold_sweep_summary": [
+        {
+            "threshold": 0.5,
+            "coverage": 0.8680555555555556,
+            "accepted_count": 125,
+            "flagged_count": 19,
+            "accepted_accuracy": 0.68,
+            "accepted_error_rate": 0.31999999999999995
+        },
+        {
+            "threshold": 0.51,
+            "coverage": 0.8611111111111112,
+            "accepted_count": 124,
+            "flagged_count": 20,
+            "accepted_accuracy": 0.6774193548387096,
+            "accepted_error_rate": 0.32258064516129037
+        },
+        {
+            "threshold": 0.52,
+            "coverage": 0.8611111111111112,
+            "accepted_count": 124,
+            "flagged_count": 20,
+            "accepted_accuracy": 0.6774193548387096,
+            "accepted_error_rate": 0.32258064516129037
+        },
+        {
+            "threshold": 0.53,
+            "coverage": 0.8472222222222222,
+            "accepted_count": 122,
+            "flagged_count": 22,
+            "accepted_accuracy": 0.6885245901639344,
+            "accepted_error_rate": 0.3114754098360656
+        },
+        {
+            "threshold": 0.54,
+            "coverage": 0.8472222222222222,
+            "accepted_count": 122,
+            "flagged_count": 22,
+            "accepted_accuracy": 0.6885245901639344,
+            "accepted_error_rate": 0.3114754098360656
+        },
+        {
+            "threshold": 0.55,
+            "coverage": 0.8263888888888888,
+            "accepted_count": 119,
+            "flagged_count": 25,
+            "accepted_accuracy": 0.6890756302521008,
+            "accepted_error_rate": 0.31092436974789917
+        },
+        {
+            "threshold": 0.56,
+            "coverage": 0.8055555555555556,
+            "accepted_count": 116,
+            "flagged_count": 28,
+            "accepted_accuracy": 0.6896551724137931,
+            "accepted_error_rate": 0.31034482758620685
+        },
+        {
+            "threshold": 0.57,
+            "coverage": 0.7777777777777778,
+            "accepted_count": 112,
+            "flagged_count": 32,
+            "accepted_accuracy": 0.6964285714285714,
+            "accepted_error_rate": 0.3035714285714286
+        },
+        {
+            "threshold": 0.58,
+            "coverage": 0.7569444444444444,
+            "accepted_count": 109,
+            "flagged_count": 35,
+            "accepted_accuracy": 0.6972477064220184,
+            "accepted_error_rate": 0.3027522935779816
+        },
+        {
+            "threshold": 0.59,
+            "coverage": 0.75,
+            "accepted_count": 108,
+            "flagged_count": 36,
+            "accepted_accuracy": 0.6944444444444444,
+            "accepted_error_rate": 0.3055555555555556
+        },
+        {
+            "threshold": 0.91,
+            "coverage": 0.3819444444444444,
+            "accepted_count": 55,
+            "flagged_count": 89,
+            "accepted_accuracy": 0.8,
+            "accepted_error_rate": 0.19999999999999996
+        },
+        {
+            "threshold": 0.92,
+            "coverage": 0.3611111111111111,
+            "accepted_count": 52,
+            "flagged_count": 92,
+            "accepted_accuracy": 0.8269230769230769,
+            "accepted_error_rate": 0.17307692307692313
+        },
+        {
+            "threshold": 0.93,
+            "coverage": 0.3541666666666667,
+            "accepted_count": 51,
+            "flagged_count": 93,
+            "accepted_accuracy": 0.8431372549019608,
+            "accepted_error_rate": 0.1568627450980392
+        },
+        {
+            "threshold": 0.94,
+            "coverage": 0.3472222222222222,
+            "accepted_count": 50,
+            "flagged_count": 94,
+            "accepted_accuracy": 0.84,
+            "accepted_error_rate": 0.16000000000000003
+        },
+        {
+            "threshold": 0.95,
+            "coverage": 0.3402777777777778,
+            "accepted_count": 49,
+            "flagged_count": 95,
+            "accepted_accuracy": 0.8571428571428571,
+            "accepted_error_rate": 0.1428571428571429
+        }
+    ],
+    "final_threshold_evaluation": {
+        "selected_threshold": 0.53,
+        "validation_accuracy": 0.6805555555555556,
+        "coverage": 0.8472222222222222,
+        "accepted_count": 122,
+        "flagged_count": 22,
+        "accepted_accuracy": 0.6885245901639344,
+        "accepted_error_rate": 0.3114754098360656,
+        "ece": 0.17387696893678772,
+        "method_note": "Threshold selected by maximizing (accuracy \u00d7 1.5 + coverage \u00d7 0.5 - error \u00d7 2.0) subject to coverage >= 70%. ECE computed across 10 confidence bins. Threshold is tuned strictly on validation data \u2014 test set is not involved.",
+        "clinical_caution": "Softmax probability is NOT a certified clinical confidence measure. Threshold abstention identifies ambiguous predictions but does not guarantee that accepted predictions are clinically correct. All predictions require independent clinical validation."
+    }
+}

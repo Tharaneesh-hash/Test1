@@ -1,0 +1,15 @@
+{
+    "architecture": "VGG19_TransferLearning",
+    "backbone": "vgg19_imagenet",
+    "num_classes": 6,
+    "dense_units": 256,
+    "dropout_rate": 0.4,
+    "input_shape": [
+        224,
+        224,
+        3
+    ],
+    "final_conv_layer": "features[34] (block5_conv4)",
+    "framework": "PyTorch",
+    "version": "2.9.0+cpu"
+}
