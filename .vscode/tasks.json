@@ -1,0 +1,57 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Mpox Detection Streamlit App",
+			"type": "shell",
+			"command": "streamlit",
+			"args": [
+				"run",
+				"app.py"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Mpox Detection App with Python",
+			"type": "shell",
+			"command": "C:\\Python314\\python.exe",
+			"args": [
+				"-m",
+				"streamlit",
+				"run",
+				"app.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Mpox Detection App in Workspace Environment",
+			"type": "shell",
+			"command": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"streamlit",
+				"run",
+				"app.py"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Launch Mpox Streamlit (Headless)",
+			"type": "shell",
+			"command": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\.venv\\Scripts\\python.exe",
+			"args": [
+				"-m",
+				"streamlit",
+				"run",
+				"app.py",
+				"--server.headless=true",
+				"--browser.gatherUsageStats=false"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
