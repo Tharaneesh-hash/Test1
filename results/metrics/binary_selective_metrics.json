@@ -1,0 +1,95 @@
+{
+    "sweep": [
+        {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 74,
+            "referred_count": 0,
+            "accuracy_on_accepted": 0.8108,
+            "error_rate": 0.1892,
+            "f1_score": 0.7586
+        },
+        {
+            "threshold": 0.55,
+            "coverage": 0.973,
+            "accepted_count": 72,
+            "referred_count": 2,
+            "accuracy_on_accepted": 0.8194,
+            "error_rate": 0.1806,
+            "f1_score": 0.7719
+        },
+        {
+            "threshold": 0.6,
+            "coverage": 0.9459,
+            "accepted_count": 70,
+            "referred_count": 4,
+            "accuracy_on_accepted": 0.8286,
+            "error_rate": 0.1714,
+            "f1_score": 0.7857
+        },
+        {
+            "threshold": 0.65,
+            "coverage": 0.9324,
+            "accepted_count": 69,
+            "referred_count": 5,
+            "accuracy_on_accepted": 0.8261,
+            "error_rate": 0.1739,
+            "f1_score": 0.7778
+        },
+        {
+            "threshold": 0.7,
+            "coverage": 0.8919,
+            "accepted_count": 66,
+            "referred_count": 8,
+            "accuracy_on_accepted": 0.8182,
+            "error_rate": 0.1818,
+            "f1_score": 0.7778
+        },
+        {
+            "threshold": 0.75,
+            "coverage": 0.8108,
+            "accepted_count": 60,
+            "referred_count": 14,
+            "accuracy_on_accepted": 0.8667,
+            "error_rate": 0.1333,
+            "f1_score": 0.8333
+        },
+        {
+            "threshold": 0.8,
+            "coverage": 0.7838,
+            "accepted_count": 58,
+            "referred_count": 16,
+            "accuracy_on_accepted": 0.8621,
+            "error_rate": 0.1379,
+            "f1_score": 0.8333
+        },
+        {
+            "threshold": 0.85,
+            "coverage": 0.7432,
+            "accepted_count": 55,
+            "referred_count": 19,
+            "accuracy_on_accepted": 0.8727,
+            "error_rate": 0.1273,
+            "f1_score": 0.8444
+        },
+        {
+            "threshold": 0.9,
+            "coverage": 0.6486,
+            "accepted_count": 48,
+            "referred_count": 26,
+            "accuracy_on_accepted": 0.875,
+            "error_rate": 0.125,
+            "f1_score": 0.8571
+        },
+        {
+            "threshold": 0.95,
+            "coverage": 0.4189,
+            "accepted_count": 31,
+            "referred_count": 43,
+            "accuracy_on_accepted": 0.871,
+            "error_rate": 0.129,
+            "f1_score": 0.8889
+        }
+    ],
+    "selective_curve_plot": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\results\\plots\\binary_selective_risk_coverage.png"
+}

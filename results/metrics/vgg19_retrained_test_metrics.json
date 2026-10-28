@@ -1,0 +1,139 @@
+{
+  "model_name": "BinaryVGG19_Retrained",
+  "training_duration_seconds": 4290.5,
+  "best_val_f1_mpox": 0.8,
+  "test_evaluation": {
+    "accuracy": 0.8243,
+    "accuracy_95ci": [
+      0.7223,
+      0.8944
+    ],
+    "sensitivity": 0.8889,
+    "sensitivity_95ci": [
+      0.7194,
+      0.9615
+    ],
+    "specificity": 0.7872,
+    "specificity_95ci": [
+      0.651,
+      0.8801
+    ],
+    "precision": 0.7059,
+    "f1_score": 0.7869,
+    "roc_auc": 0.9031,
+    "confusion_matrix": {
+      "tn": 37,
+      "fp": 10,
+      "fn": 3,
+      "tp": 24
+    },
+    "total_errors": 13,
+    "total_test_samples": 74,
+    "errors": [
+      {
+        "filename": "CHP_08_01.jpg",
+        "original_code": "CHP",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.8726,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "CHP_08_02.jpg",
+        "original_code": "CHP",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.6511,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "CHP_14_01.jpg",
+        "original_code": "CHP",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.984,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "CHP_14_02.jpg",
+        "original_code": "CHP",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.9451,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "CHP_25_01.jpg",
+        "original_code": "CHP",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.6485,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "CHP_49_01.jpg",
+        "original_code": "CHP",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.9853,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "CWP_40_03.jpg",
+        "original_code": "CWP",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.777,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "HEALTHY_55_01.jpg",
+        "original_code": "HEALTHY",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.5464,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "HFMD_100_01.jpg",
+        "original_code": "HFMD",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.8294,
+        "error_type": "False Positive (FP)"
+      },
+      {
+        "filename": "MKP_28_03.jpg",
+        "original_code": "MKP",
+        "true_label": "MPOX",
+        "pred_label": "NON_MPOX",
+        "mpox_score": 0.4931,
+        "error_type": "False Negative (FN)"
+      },
+      {
+        "filename": "MKP_71_01.jpg",
+        "original_code": "MKP",
+        "true_label": "MPOX",
+        "pred_label": "NON_MPOX",
+        "mpox_score": 0.0088,
+        "error_type": "False Negative (FN)"
+      },
+      {
+        "filename": "MKP_71_02.jpg",
+        "original_code": "MKP",
+        "true_label": "MPOX",
+        "pred_label": "NON_MPOX",
+        "mpox_score": 0.0118,
+        "error_type": "False Negative (FN)"
+      },
+      {
+        "filename": "MSL_23_01.jpg",
+        "original_code": "MSL",
+        "true_label": "NON_MPOX",
+        "pred_label": "MPOX",
+        "mpox_score": 0.9621,
+        "error_type": "False Positive (FP)"
+      }
+    ]
+  }
+}

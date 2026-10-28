@@ -1,0 +1,1583 @@
+{
+  "quarantined_count": 27,
+  "added_train_count": 244,
+  "added_valid_count": 43,
+  "manifest": {
+    "quarantined_test_leaks": [
+      {
+        "new_filename": "MSLDv2_MKP_10_01.jpg",
+        "matched_test_file": "MKP_10_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_10_02.jpg",
+        "matched_test_file": "MKP_10_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_138_01.jpg",
+        "matched_test_file": "MKP_138_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_138_02.jpg",
+        "matched_test_file": "MKP_138_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_141_01.jpg",
+        "matched_test_file": "MKP_141_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_16_01.jpg",
+        "matched_test_file": "MKP_16_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_24_01.jpg",
+        "matched_test_file": "MKP_24_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_24_02.jpg",
+        "matched_test_file": "MKP_24_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_26_02.jpg",
+        "matched_test_file": "MKP_26_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_28_01.jpg",
+        "matched_test_file": "MKP_28_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_28_02.jpg",
+        "matched_test_file": "MKP_28_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_28_03.jpg",
+        "matched_test_file": "MKP_28_03.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_28_04.jpg",
+        "matched_test_file": "MKP_28_04.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_38_01.jpg",
+        "matched_test_file": "MKP_38_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_38_02.jpg",
+        "matched_test_file": "MKP_38_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_69_01.jpg",
+        "matched_test_file": "MKP_69_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_69_02.jpg",
+        "matched_test_file": "MKP_69_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_69_03.jpg",
+        "matched_test_file": "MKP_69_03.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_71_01.jpg",
+        "matched_test_file": "MKP_71_01.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_71_02.jpg",
+        "matched_test_file": "MKP_71_02.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_71_03.jpg",
+        "matched_test_file": "MKP_71_03.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MSLDv2_MKP_71_04.jpg",
+        "matched_test_file": "MKP_71_04.jpg",
+        "reason": "Exact SHA-256 hash collision with independent test set"
+      },
+      {
+        "new_filename": "MID_MonkeyPox_136.jpg",
+        "matched_test_file": "MKP_120_01.jpg",
+        "reason": "Perceptual hash collision (Hamming <= 2) with test file MKP_120_01.jpg"
+      },
+      {
+        "new_filename": "MID_MonkeyPox_251.jpg",
+        "matched_test_file": "MKP_118_01.jpg",
+        "reason": "Perceptual hash collision (Hamming <= 2) with test file MKP_118_01.jpg"
+      },
+      {
+        "new_filename": "MSID_monkeypox138.png",
+        "matched_test_file": "MKP_26_01.jpg",
+        "reason": "Perceptual hash collision (Hamming <= 2) with test file MKP_26_01.jpg"
+      },
+      {
+        "new_filename": "MSID_monkeypox198.png",
+        "matched_test_file": "MKP_111_01.jpg",
+        "reason": "Perceptual hash collision (Hamming <= 2) with test file MKP_111_01.jpg"
+      },
+      {
+        "new_filename": "MSID_monkeypox278.png",
+        "matched_test_file": "MKP_55_01.jpg",
+        "reason": "Perceptual hash collision (Hamming <= 2) with test file MKP_55_01.jpg"
+      }
+    ],
+    "integrated_train": [
+      {
+        "original_filename": "MID_MonkeyPox_10.jpg",
+        "integrated_filename": "MKP_MID_10.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_10.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_102.jpg",
+        "integrated_filename": "MKP_MID_102.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_102.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_103.jpg",
+        "integrated_filename": "MKP_MID_103.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_103.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_104.jpg",
+        "integrated_filename": "MKP_MID_104.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_104.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_105.jpg",
+        "integrated_filename": "MKP_MID_105.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_105.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_107.jpg",
+        "integrated_filename": "MKP_MID_107.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_107.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_108.jpg",
+        "integrated_filename": "MKP_MID_108.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_108.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_11.jpg",
+        "integrated_filename": "MKP_MID_11.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_11.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_111.jpg",
+        "integrated_filename": "MKP_MID_111.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_111.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_113.jpg",
+        "integrated_filename": "MKP_MID_113.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_113.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_114.jpg",
+        "integrated_filename": "MKP_MID_114.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_114.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_115.jpg",
+        "integrated_filename": "MKP_MID_115.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_115.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_116.jpg",
+        "integrated_filename": "MKP_MID_116.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_116.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_117.jpg",
+        "integrated_filename": "MKP_MID_117.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_117.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_118.jpg",
+        "integrated_filename": "MKP_MID_118.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_118.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_12.jpg",
+        "integrated_filename": "MKP_MID_12.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_12.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_120.jpg",
+        "integrated_filename": "MKP_MID_120.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_120.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_121.jpg",
+        "integrated_filename": "MKP_MID_121.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_121.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_122.jpg",
+        "integrated_filename": "MKP_MID_122.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_122.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_124.jpg",
+        "integrated_filename": "MKP_MID_124.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_124.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_126.jpg",
+        "integrated_filename": "MKP_MID_126.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_126.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_127.jpg",
+        "integrated_filename": "MKP_MID_127.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_127.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_128.jpg",
+        "integrated_filename": "MKP_MID_128.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_128.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_129.jpg",
+        "integrated_filename": "MKP_MID_129.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_129.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_13.jpg",
+        "integrated_filename": "MKP_MID_13.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_13.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_130.jpg",
+        "integrated_filename": "MKP_MID_130.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_130.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_131.jpg",
+        "integrated_filename": "MKP_MID_131.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_131.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_132.jpg",
+        "integrated_filename": "MKP_MID_132.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_132.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_133.jpg",
+        "integrated_filename": "MKP_MID_133.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_133.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_134.jpg",
+        "integrated_filename": "MKP_MID_134.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_134.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_135.jpg",
+        "integrated_filename": "MKP_MID_135.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_135.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_138.jpg",
+        "integrated_filename": "MKP_MID_138.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_138.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_139.jpg",
+        "integrated_filename": "MKP_MID_139.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_139.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_14.jpg",
+        "integrated_filename": "MKP_MID_14.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_14.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_140.jpg",
+        "integrated_filename": "MKP_MID_140.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_140.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_141.jpg",
+        "integrated_filename": "MKP_MID_141.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_141.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_142.jpg",
+        "integrated_filename": "MKP_MID_142.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_142.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_143.jpg",
+        "integrated_filename": "MKP_MID_143.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_143.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_147.jpg",
+        "integrated_filename": "MKP_MID_147.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_147.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_148.jpg",
+        "integrated_filename": "MKP_MID_148.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_148.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_149.jpg",
+        "integrated_filename": "MKP_MID_149.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_149.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_151.jpg",
+        "integrated_filename": "MKP_MID_151.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_151.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_152.jpg",
+        "integrated_filename": "MKP_MID_152.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_152.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_154.jpg",
+        "integrated_filename": "MKP_MID_154.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_154.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_155.jpg",
+        "integrated_filename": "MKP_MID_155.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_155.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_156.jpg",
+        "integrated_filename": "MKP_MID_156.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_156.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_157.jpg",
+        "integrated_filename": "MKP_MID_157.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_157.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_158.jpg",
+        "integrated_filename": "MKP_MID_158.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_158.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_159.jpg",
+        "integrated_filename": "MKP_MID_159.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_159.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_16.jpg",
+        "integrated_filename": "MKP_MID_16.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_16.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_160.jpg",
+        "integrated_filename": "MKP_MID_160.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_160.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_162.jpg",
+        "integrated_filename": "MKP_MID_162.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_162.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_163.jpg",
+        "integrated_filename": "MKP_MID_163.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_163.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_165.jpg",
+        "integrated_filename": "MKP_MID_165.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_165.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_166.jpg",
+        "integrated_filename": "MKP_MID_166.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_166.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_167.jpg",
+        "integrated_filename": "MKP_MID_167.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_167.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_169.jpg",
+        "integrated_filename": "MKP_MID_169.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_169.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_170.jpg",
+        "integrated_filename": "MKP_MID_170.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_170.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_171.jpg",
+        "integrated_filename": "MKP_MID_171.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_171.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_172.jpg",
+        "integrated_filename": "MKP_MID_172.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_172.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_173.jpg",
+        "integrated_filename": "MKP_MID_173.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_173.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_175.jpg",
+        "integrated_filename": "MKP_MID_175.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_175.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_176.jpg",
+        "integrated_filename": "MKP_MID_176.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_176.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_177.jpg",
+        "integrated_filename": "MKP_MID_177.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_177.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_178.jpg",
+        "integrated_filename": "MKP_MID_178.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_178.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_179.jpg",
+        "integrated_filename": "MKP_MID_179.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_179.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_18.jpg",
+        "integrated_filename": "MKP_MID_18.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_18.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_182.jpg",
+        "integrated_filename": "MKP_MID_182.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_182.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_183.jpg",
+        "integrated_filename": "MKP_MID_183.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_183.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_184.jpg",
+        "integrated_filename": "MKP_MID_184.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_184.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_185.jpg",
+        "integrated_filename": "MKP_MID_185.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_185.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_186.jpg",
+        "integrated_filename": "MKP_MID_186.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_186.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_187.jpg",
+        "integrated_filename": "MKP_MID_187.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_187.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_188.jpg",
+        "integrated_filename": "MKP_MID_188.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_188.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_189.jpg",
+        "integrated_filename": "MKP_MID_189.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_189.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_19.jpg",
+        "integrated_filename": "MKP_MID_19.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_19.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_192.jpg",
+        "integrated_filename": "MKP_MID_192.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_192.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_193.jpg",
+        "integrated_filename": "MKP_MID_193.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_193.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_194.jpg",
+        "integrated_filename": "MKP_MID_194.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_194.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_195.jpg",
+        "integrated_filename": "MKP_MID_195.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_195.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_196.jpg",
+        "integrated_filename": "MKP_MID_196.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_196.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_197.jpg",
+        "integrated_filename": "MKP_MID_197.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_197.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_198.jpg",
+        "integrated_filename": "MKP_MID_198.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_198.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_199.jpg",
+        "integrated_filename": "MKP_MID_199.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_199.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_200.jpg",
+        "integrated_filename": "MKP_MID_200.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_200.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_201.jpg",
+        "integrated_filename": "MKP_MID_201.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_201.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_202.jpg",
+        "integrated_filename": "MKP_MID_202.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_202.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_203.jpg",
+        "integrated_filename": "MKP_MID_203.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_203.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_204.jpg",
+        "integrated_filename": "MKP_MID_204.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_204.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_205.jpg",
+        "integrated_filename": "MKP_MID_205.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_205.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_206.jpg",
+        "integrated_filename": "MKP_MID_206.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_206.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_207.jpg",
+        "integrated_filename": "MKP_MID_207.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_207.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_208.jpg",
+        "integrated_filename": "MKP_MID_208.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_208.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_209.jpg",
+        "integrated_filename": "MKP_MID_209.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_209.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_21.jpg",
+        "integrated_filename": "MKP_MID_21.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_21.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_210.jpg",
+        "integrated_filename": "MKP_MID_210.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_210.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_211.jpg",
+        "integrated_filename": "MKP_MID_211.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_211.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_213.jpg",
+        "integrated_filename": "MKP_MID_213.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_213.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_214.jpg",
+        "integrated_filename": "MKP_MID_214.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_214.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_215.jpg",
+        "integrated_filename": "MKP_MID_215.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_215.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_216.jpg",
+        "integrated_filename": "MKP_MID_216.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_216.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_217.jpg",
+        "integrated_filename": "MKP_MID_217.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_217.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_218.jpg",
+        "integrated_filename": "MKP_MID_218.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_218.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_219.jpg",
+        "integrated_filename": "MKP_MID_219.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_219.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_22.jpg",
+        "integrated_filename": "MKP_MID_22.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_22.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_220.jpg",
+        "integrated_filename": "MKP_MID_220.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_220.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_221.jpg",
+        "integrated_filename": "MKP_MID_221.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_221.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_222.jpg",
+        "integrated_filename": "MKP_MID_222.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_222.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_224.jpg",
+        "integrated_filename": "MKP_MID_224.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_224.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_226.jpg",
+        "integrated_filename": "MKP_MID_226.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_226.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_227.jpg",
+        "integrated_filename": "MKP_MID_227.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_227.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_228.jpg",
+        "integrated_filename": "MKP_MID_228.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_228.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_229.jpg",
+        "integrated_filename": "MKP_MID_229.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_229.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_23.jpg",
+        "integrated_filename": "MKP_MID_23.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_23.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_230.jpg",
+        "integrated_filename": "MKP_MID_230.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_230.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_231.jpg",
+        "integrated_filename": "MKP_MID_231.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_231.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_232.jpg",
+        "integrated_filename": "MKP_MID_232.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_232.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_233.jpg",
+        "integrated_filename": "MKP_MID_233.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_233.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_236.jpg",
+        "integrated_filename": "MKP_MID_236.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_236.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_237.jpg",
+        "integrated_filename": "MKP_MID_237.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_237.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_238.jpg",
+        "integrated_filename": "MKP_MID_238.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_238.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_239.jpg",
+        "integrated_filename": "MKP_MID_239.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_239.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_24.jpg",
+        "integrated_filename": "MKP_MID_24.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_24.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_240.jpg",
+        "integrated_filename": "MKP_MID_240.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_240.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_241.jpg",
+        "integrated_filename": "MKP_MID_241.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_241.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_242.jpg",
+        "integrated_filename": "MKP_MID_242.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_242.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_243.jpg",
+        "integrated_filename": "MKP_MID_243.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_243.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_244.jpg",
+        "integrated_filename": "MKP_MID_244.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_244.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_245.jpg",
+        "integrated_filename": "MKP_MID_245.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_245.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_247.jpg",
+        "integrated_filename": "MKP_MID_247.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_247.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_248.jpg",
+        "integrated_filename": "MKP_MID_248.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_248.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_249.jpg",
+        "integrated_filename": "MKP_MID_249.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_249.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_25.jpg",
+        "integrated_filename": "MKP_MID_25.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_25.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_250.jpg",
+        "integrated_filename": "MKP_MID_250.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_250.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_252.jpg",
+        "integrated_filename": "MKP_MID_252.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_252.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_253.jpg",
+        "integrated_filename": "MKP_MID_253.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_253.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_254.jpg",
+        "integrated_filename": "MKP_MID_254.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_254.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_255.jpg",
+        "integrated_filename": "MKP_MID_255.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_255.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_256.jpg",
+        "integrated_filename": "MKP_MID_256.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_256.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_257.jpg",
+        "integrated_filename": "MKP_MID_257.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_257.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_258.jpg",
+        "integrated_filename": "MKP_MID_258.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_258.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_259.jpg",
+        "integrated_filename": "MKP_MID_259.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_259.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_26.jpg",
+        "integrated_filename": "MKP_MID_26.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_26.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_260.jpg",
+        "integrated_filename": "MKP_MID_260.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_260.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_262.jpg",
+        "integrated_filename": "MKP_MID_262.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_262.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_264.jpg",
+        "integrated_filename": "MKP_MID_264.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_264.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_27.jpg",
+        "integrated_filename": "MKP_MID_27.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_27.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_28.jpg",
+        "integrated_filename": "MKP_MID_28.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_28.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_29.jpg",
+        "integrated_filename": "MKP_MID_29.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_29.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_30.jpg",
+        "integrated_filename": "MKP_MID_30.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_30.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_31.jpg",
+        "integrated_filename": "MKP_MID_31.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_31.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_32.jpg",
+        "integrated_filename": "MKP_MID_32.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_32.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_33.jpg",
+        "integrated_filename": "MKP_MID_33.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_33.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_34.jpg",
+        "integrated_filename": "MKP_MID_34.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_34.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_36.jpg",
+        "integrated_filename": "MKP_MID_36.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_36.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_39.jpg",
+        "integrated_filename": "MKP_MID_39.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_39.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_40.jpg",
+        "integrated_filename": "MKP_MID_40.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_40.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_41.jpg",
+        "integrated_filename": "MKP_MID_41.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_41.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_42.jpg",
+        "integrated_filename": "MKP_MID_42.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_42.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_43.jpg",
+        "integrated_filename": "MKP_MID_43.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_43.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_44.jpg",
+        "integrated_filename": "MKP_MID_44.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_44.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_45.jpg",
+        "integrated_filename": "MKP_MID_45.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_45.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_46.jpg",
+        "integrated_filename": "MKP_MID_46.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_46.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_47.jpg",
+        "integrated_filename": "MKP_MID_47.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_47.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_48.jpg",
+        "integrated_filename": "MKP_MID_48.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_48.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_49.jpg",
+        "integrated_filename": "MKP_MID_49.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_49.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_5.jpg",
+        "integrated_filename": "MKP_MID_5.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_5.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_50.jpg",
+        "integrated_filename": "MKP_MID_50.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_50.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_51.jpg",
+        "integrated_filename": "MKP_MID_51.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_51.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_52.jpg",
+        "integrated_filename": "MKP_MID_52.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_52.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_53.jpg",
+        "integrated_filename": "MKP_MID_53.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_53.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_54.jpg",
+        "integrated_filename": "MKP_MID_54.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_54.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_57.jpg",
+        "integrated_filename": "MKP_MID_57.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_57.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_58.jpg",
+        "integrated_filename": "MKP_MID_58.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_58.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_59.jpg",
+        "integrated_filename": "MKP_MID_59.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_59.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_60.jpg",
+        "integrated_filename": "MKP_MID_60.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_60.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_61.jpg",
+        "integrated_filename": "MKP_MID_61.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_61.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_62.jpg",
+        "integrated_filename": "MKP_MID_62.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_62.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_63.jpg",
+        "integrated_filename": "MKP_MID_63.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_63.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_67.jpg",
+        "integrated_filename": "MKP_MID_67.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_67.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_68.jpg",
+        "integrated_filename": "MKP_MID_68.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_68.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_69.jpg",
+        "integrated_filename": "MKP_MID_69.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_69.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_70.jpg",
+        "integrated_filename": "MKP_MID_70.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_70.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_72.jpg",
+        "integrated_filename": "MKP_MID_72.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_72.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_73.jpg",
+        "integrated_filename": "MKP_MID_73.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_73.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_74.jpg",
+        "integrated_filename": "MKP_MID_74.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_74.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_75.jpg",
+        "integrated_filename": "MKP_MID_75.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_75.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_76.jpg",
+        "integrated_filename": "MKP_MID_76.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_76.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_79.jpg",
+        "integrated_filename": "MKP_MID_79.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_79.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_8.jpg",
+        "integrated_filename": "MKP_MID_8.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_8.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_80.jpg",
+        "integrated_filename": "MKP_MID_80.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_80.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_81.jpg",
+        "integrated_filename": "MKP_MID_81.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_81.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_82.jpg",
+        "integrated_filename": "MKP_MID_82.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_82.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_83.jpg",
+        "integrated_filename": "MKP_MID_83.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_83.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_86.jpg",
+        "integrated_filename": "MKP_MID_86.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_86.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_87.jpg",
+        "integrated_filename": "MKP_MID_87.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_87.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_89.jpg",
+        "integrated_filename": "MKP_MID_89.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_89.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_90.jpg",
+        "integrated_filename": "MKP_MID_90.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_90.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_92.jpg",
+        "integrated_filename": "MKP_MID_92.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_92.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_94.jpg",
+        "integrated_filename": "MKP_MID_94.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_94.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_95.jpg",
+        "integrated_filename": "MKP_MID_95.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_95.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_98.jpg",
+        "integrated_filename": "MKP_MID_98.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_98.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_99.jpg",
+        "integrated_filename": "MKP_MID_99.jpg",
+        "destination": "FOLDS\\fold1\\train\\MKP_MID_99.jpg"
+      },
+      {
+        "original_filename": "MSID_monkeypox1.png",
+        "integrated_filename": "MKP_MSID_1.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_1.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox103.png",
+        "integrated_filename": "MKP_MSID_103.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_103.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox104.png",
+        "integrated_filename": "MKP_MSID_104.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_104.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox116.png",
+        "integrated_filename": "MKP_MSID_116.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_116.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox119.png",
+        "integrated_filename": "MKP_MSID_119.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_119.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox128.png",
+        "integrated_filename": "MKP_MSID_128.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_128.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox14.png",
+        "integrated_filename": "MKP_MSID_14.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_14.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox141.png",
+        "integrated_filename": "MKP_MSID_141.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_141.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox149.png",
+        "integrated_filename": "MKP_MSID_149.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_149.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox156.png",
+        "integrated_filename": "MKP_MSID_156.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_156.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox167.png",
+        "integrated_filename": "MKP_MSID_167.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_167.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox17.png",
+        "integrated_filename": "MKP_MSID_17.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_17.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox172.png",
+        "integrated_filename": "MKP_MSID_172.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_172.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox175.png",
+        "integrated_filename": "MKP_MSID_175.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_175.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox182.png",
+        "integrated_filename": "MKP_MSID_182.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_182.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox187.png",
+        "integrated_filename": "MKP_MSID_187.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_187.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox188.png",
+        "integrated_filename": "MKP_MSID_188.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_188.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox193.png",
+        "integrated_filename": "MKP_MSID_193.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_193.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox200.png",
+        "integrated_filename": "MKP_MSID_200.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_200.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox204.png",
+        "integrated_filename": "MKP_MSID_204.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_204.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox207.png",
+        "integrated_filename": "MKP_MSID_207.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_207.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox208.png",
+        "integrated_filename": "MKP_MSID_208.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_208.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox211.png",
+        "integrated_filename": "MKP_MSID_211.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_211.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox228.png",
+        "integrated_filename": "MKP_MSID_228.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_228.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox23.png",
+        "integrated_filename": "MKP_MSID_23.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_23.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox235.png",
+        "integrated_filename": "MKP_MSID_235.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_235.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox249.png",
+        "integrated_filename": "MKP_MSID_249.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_249.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox254.png",
+        "integrated_filename": "MKP_MSID_254.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_254.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox261.png",
+        "integrated_filename": "MKP_MSID_261.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_261.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox268.png",
+        "integrated_filename": "MKP_MSID_268.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_268.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox274.png",
+        "integrated_filename": "MKP_MSID_274.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_274.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox279.png",
+        "integrated_filename": "MKP_MSID_279.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_279.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox34.png",
+        "integrated_filename": "MKP_MSID_34.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_34.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox4.png",
+        "integrated_filename": "MKP_MSID_4.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_4.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox40.png",
+        "integrated_filename": "MKP_MSID_40.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_40.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox45.png",
+        "integrated_filename": "MKP_MSID_45.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_45.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox47.png",
+        "integrated_filename": "MKP_MSID_47.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_47.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox58.png",
+        "integrated_filename": "MKP_MSID_58.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_58.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox72.png",
+        "integrated_filename": "MKP_MSID_72.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_72.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox81.png",
+        "integrated_filename": "MKP_MSID_81.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_81.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox92.png",
+        "integrated_filename": "MKP_MSID_92.png",
+        "destination": "FOLDS\\fold1\\train\\MKP_MSID_92.png"
+      }
+    ],
+    "integrated_valid": [
+      {
+        "original_filename": "MID_MonkeyPox.jpg",
+        "integrated_filename": "MKP_MID_00.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_00.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_100.jpg",
+        "integrated_filename": "MKP_MID_100.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_100.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_101.jpg",
+        "integrated_filename": "MKP_MID_101.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_101.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_112.jpg",
+        "integrated_filename": "MKP_MID_112.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_112.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_119.jpg",
+        "integrated_filename": "MKP_MID_119.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_119.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_123.jpg",
+        "integrated_filename": "MKP_MID_123.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_123.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_125.jpg",
+        "integrated_filename": "MKP_MID_125.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_125.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_137.jpg",
+        "integrated_filename": "MKP_MID_137.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_137.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_146.jpg",
+        "integrated_filename": "MKP_MID_146.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_146.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_15.jpg",
+        "integrated_filename": "MKP_MID_15.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_15.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_150.jpg",
+        "integrated_filename": "MKP_MID_150.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_150.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_164.jpg",
+        "integrated_filename": "MKP_MID_164.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_164.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_168.jpg",
+        "integrated_filename": "MKP_MID_168.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_168.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_17.jpg",
+        "integrated_filename": "MKP_MID_17.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_17.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_174.jpg",
+        "integrated_filename": "MKP_MID_174.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_174.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_181.jpg",
+        "integrated_filename": "MKP_MID_181.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_181.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_191.jpg",
+        "integrated_filename": "MKP_MID_191.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_191.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_2.jpg",
+        "integrated_filename": "MKP_MID_2.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_2.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_212.jpg",
+        "integrated_filename": "MKP_MID_212.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_212.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_223.jpg",
+        "integrated_filename": "MKP_MID_223.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_223.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_234.jpg",
+        "integrated_filename": "MKP_MID_234.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_234.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_246.jpg",
+        "integrated_filename": "MKP_MID_246.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_246.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_261.jpg",
+        "integrated_filename": "MKP_MID_261.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_261.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_263.jpg",
+        "integrated_filename": "MKP_MID_263.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_263.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_35.jpg",
+        "integrated_filename": "MKP_MID_35.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_35.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_37.jpg",
+        "integrated_filename": "MKP_MID_37.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_37.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_38.jpg",
+        "integrated_filename": "MKP_MID_38.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_38.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_55.jpg",
+        "integrated_filename": "MKP_MID_55.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_55.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_56.jpg",
+        "integrated_filename": "MKP_MID_56.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_56.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_6.jpg",
+        "integrated_filename": "MKP_MID_6.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_6.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_65.jpg",
+        "integrated_filename": "MKP_MID_65.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_65.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_7.jpg",
+        "integrated_filename": "MKP_MID_7.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_7.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_88.jpg",
+        "integrated_filename": "MKP_MID_88.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_88.jpg"
+      },
+      {
+        "original_filename": "MID_MonkeyPox_9.jpg",
+        "integrated_filename": "MKP_MID_9.jpg",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MID_9.jpg"
+      },
+      {
+        "original_filename": "MSID_monkeypox196.png",
+        "integrated_filename": "MKP_MSID_196.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_196.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox206.png",
+        "integrated_filename": "MKP_MSID_206.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_206.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox214.png",
+        "integrated_filename": "MKP_MSID_214.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_214.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox217.png",
+        "integrated_filename": "MKP_MSID_217.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_217.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox277.png",
+        "integrated_filename": "MKP_MSID_277.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_277.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox69.png",
+        "integrated_filename": "MKP_MSID_69.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_69.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox94.png",
+        "integrated_filename": "MKP_MSID_94.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_94.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox97.png",
+        "integrated_filename": "MKP_MSID_97.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_97.png"
+      },
+      {
+        "original_filename": "MSID_monkeypox98.png",
+        "integrated_filename": "MKP_MSID_98.png",
+        "destination": "FOLDS\\fold1\\valid\\MKP_MSID_98.png"
+      }
+    ]
+  }
+}

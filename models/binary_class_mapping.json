@@ -1,0 +1,16 @@
+{
+    "binary_class_names": [
+        "NON_MPOX",
+        "MPOX"
+    ],
+    "mpox_index": 1,
+    "non_mpox_index": 0,
+    "original_code_to_name": {
+        "CHP": "Chickenpox",
+        "CWP": "Cowpox",
+        "HEALTHY": "Healthy",
+        "HFMD": "HFMD",
+        "MKP": "Monkeypox",
+        "MSL": "Measles"
+    }
+}

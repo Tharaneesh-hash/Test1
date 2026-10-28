@@ -1,0 +1,10 @@
+{
+    "newly_integrated_train_count": 244,
+    "newly_integrated_valid_count": 43,
+    "total_new_trained_images": 287,
+    "total_all_trained_mpox_in_model": 446,
+    "target_model_checkpoint": "models/binary_vgg19_best.pt",
+    "model_architecture": "BinaryVGG19",
+    "test_sensitivity_achieved": "88.89% (24/27)",
+    "test_accuracy_achieved": "82.43% (Single) / 83.78% (Ensemble)"
+}

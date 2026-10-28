@@ -1,231 +1,173 @@
-# Transfer Learning Enabled Mpox Recognition Using VGG19, Grad-CAM, and Uncertainty-Aware Prediction
+# Binary Mpox Skin-Lesion Detection AI System
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Framework-PyTorch](https://img.shields.io/badge/Framework-PyTorch%20%7C%20Torchvision-EE4C2C.svg)](https://pytorch.org/)
 [![UI-Streamlit](https://img.shields.io/badge/UI-Streamlit%201.63-FF4B4B.svg)](https://streamlit.io/)
 [![License-Research](https://img.shields.io/badge/License-Academic%20Research%20Only-yellow.svg)](#medical-research-disclaimer)
 
-An end-to-end medical deep learning research prototype for the automated differential recognition of **Monkeypox (Mpox)** skin lesions against common confounding dermatological conditions, integrated with **Explainable AI (Grad-CAM)** and an **Uncertainty-Aware Decision Support Policy** with human-in-the-loop referral.
+An end-to-end, leak-free medical deep learning system for automated binary recognition of **Monkeypox (Mpox)** vs. **NON_MPOX** skin lesions (Chickenpox, Cowpox, HFMD, Measles, Healthy skin), integrated with **Explainable AI (Grad-CAM)** and a **Validation-Calibrated Uncertainty Decision Policy**.
 
 ---
 
 ## 📋 Table of Contents
-1. [Project Overview & Objectives](#project-overview--objectives)
-2. [Dataset & Clinical Categorization](#dataset--clinical-categorization)
-3. [Architecture & Transfer Learning Design](#architecture--transfer-learning-design)
-4. [Explainable AI (Grad-CAM)](#explainable-ai-grad-cam)
-5. [Uncertainty-Aware Prediction & Referral Policy](#uncertainty-aware-prediction--referral-policy)
-6. [Installation & Environment Setup](#installation--environment-setup)
-7. [Step-by-Step Execution Guide](#step-by-step-execution-guide)
-8. [Automated Testing](#automated-testing)
-9. [Evaluation Metrics & Benchmark Results](#evaluation-metrics--benchmark-results)
+1. [Project Overview & Objective](#project-overview--objective)
+2. [Dataset & Binary Mapping](#dataset--binary-mapping)
+3. [Model Architectures & Training Design](#model-architectures--training-design)
+4. [Uncertainty & Abstention Policy](#uncertainty--abstention-policy)
+5. [Explainable AI (Grad-CAM)](#explainable-ai-grad-cam)
+6. [Interactive Streamlit Application](#interactive-streamlit-application)
+7. [Automated Verification & Unit Tests](#automated-verification--unit-tests)
+8. [Benchmark Evaluation Results](#benchmark-evaluation-results)
+9. [Execution & Reproduction Guide](#execution--reproduction-guide)
 10. [Known Limitations](#known-limitations)
 11. [Medical Research Disclaimer](#medical-research-disclaimer)
 
 ---
 
-## 🎯 Project Overview & Objectives
+## 🎯 Project Overview & Objective
 
-Early identification of Mpox is critical for patient triage, isolation, and mitigating public health outbreaks. However, dermatological lesions caused by Mpox frequently mimic other infectious pustular, vesicular, and papular conditions.
+The objective of this upgrade is to convert a multi-class skin lesion recognition prototype into a reliable, high-sensitivity binary classifier:
+- **Class 1 (MPOX):** Confirmed Monkeypox skin lesions (`MKP`).
+- **Class 0 (NON_MPOX):** Non-Mpox lesions or controls (`CHP`, `CWP`, `HFMD`, `MSL`, `HEALTHY`).
 
-This project delivers:
-1. **Accurate Transfer Learning:** A tailored VGG19 model pretrained on ImageNet, utilizing a custom classification head and two-stage optimization (feature extraction + Block 5 fine-tuning).
-2. **Explainability (Grad-CAM):** Gradient-weighted Class Activation Mapping computed directly on VGG19's final convolutional layer (`block5_conv4` / `features[34]`) to visualize which lesion features drove the classification.
-3. **Uncertainty-Aware Decision Support:** Transparent confidence thresholding and Shannon predictive entropy to identify ambiguous, out-of-distribution, or low-confidence samples, routing them to `REVIEW_REQUIRED` for expert clinical review.
-4. **Interactive Clinician Dashboard:** A responsive Streamlit application providing real-time inference, multi-class probability distributions, explainability overlays, and benchmark performance reports.
-
----
-
-## 🩺 Dataset & Clinical Categorization
-
-The dataset comprises **755 high-resolution dermatological lesion images** categorized into 6 differential classes:
-
-| Class Code | Medical Diagnosis | Description | Total Samples (Fold 1) |
-|:---|:---|:---|:---:|
-| **MKP** | **Monkeypox (Mpox)** | Target zoonotic orthopoxvirus pustular lesions | 284 (Train: 202, Val: 55, Test: 27) |
-| **CHP** | Chickenpox | Varicella-zoster virus vesicular rash | 75 (Train: 50, Val: 16, Test: 9) |
-| **CWP** | Cowpox | Rare orthopoxvirus localized ulcerating skin lesions | 66 (Train: 49, Val: 10, Test: 7) |
-| **HEALTHY** | Healthy Skin | Normal cutaneous tissue controls | 114 (Train: 83, Val: 22, Test: 9) |
-| **HFMD** | Hand, Foot, and Mouth Disease | Coxsackievirus erythematous papulovesicular rash | 161 (Train: 116, Val: 29, Test: 16) |
-| **MSL** | Measles | Morbillivirus maculopapular rash | 55 (Train: 37, Val: 12, Test: 6) |
-
-### Leakage-Free Splitting Methodology
-- Images follow the naming pattern `{PREFIX}_{PATIENT_ID}_{IMAGE_ID}.jpg`.
-- **Patient/Group Stratification:** The dataset is partitioned into 5 balanced cross-validation folds (`fold1` through `fold5`).
-- **Zero Patient Overlap:** All multiple lesion photos from the same patient/case are strictly isolated within a single split (`train`, `valid`, or `test`), preventing data leakage.
-- **Untouched Test Set:** The test set (`fold1/test`, 74 images) is kept completely untouched during hyperparameter tuning, model checkpointing, and threshold selection.
+Key engineering requirements strictly enforced:
+- **Zero Data Leakage:** Final test set (`fold1/test`, 74 images) was kept completely untouched until single final evaluation. Model selection and uncertainty threshold tuning were performed strictly on training and validation splits.
+- **Three Pretrained Architectures Evaluated:** VGG19, ResNet34, and EfficientNet-B0 with ImageNet pretrained backbones, two-stage fine-tuning, and Cosine Annealing.
+- **Original Condition Tracking:** Metadata for the original 6 dermatological conditions is preserved to analyze false positives and false negatives without displaying them in the clinical user UI.
 
 ---
 
-## 🏗️ Architecture & Transfer Learning Design
+## 🩺 Dataset & Binary Mapping
 
-### VGG19 Backbone Configuration
-- **Pretrained Weights:** ImageNet-1K (`weights=VGG19_Weights.DEFAULT`)
-- **Convolutional Backbone:** 16 conv layers organized into 5 blocks with max-pooling.
-- **Backbone Freezing:** Initially frozen to preserve rich general visual representations and prevent catastrophic forgetting on medical data.
+The dataset contains 755 dermatological images organized in 5 folds with patient/source grouping (no patient images span splits).
 
-### Custom Classification Head
-```
-Input (224 x 224 x 3)
-      │
-[ VGG19 Features Backbone (Frozen: Block 1 - 5) ]
-      │ (512 x 7 x 7)
-[ AdaptiveAvgPool2d (1 x 1) ] (Global Average Pooling)
-      │ (512)
-[ Flatten ]
-      │
-[ Linear(512 -> 256) + ReLU ]
-      │
-[ Dropout(p = 0.40) ] (Regularization)
-      │
-[ Linear(256 -> 6) ] (Output Logits)
-      │
-[ Softmax Activation ] -> Class Probabilities
-```
+### Fold 1 Split Distribution
+| Split | Total Samples | MPOX (Class 1) | NON_MPOX (Class 0) | Original Classes Breakdown |
+|:---|:---:|:---:|:---:|:---|
+| **Train** | 537 | 202 | 335 | MKP: 202, CHP: 50, CWP: 49, HFMD: 116, MSL: 37, HEALTHY: 83 |
+| **Validation** | 144 | 55 | 89 | MKP: 55, CHP: 16, CWP: 10, HFMD: 29, MSL: 12, HEALTHY: 22 |
+| **Test (Untouched)** | 74 | 27 | 47 | MKP: 27, CHP: 9, CWP: 7, HFMD: 16, MSL: 6, HEALTHY: 9 |
 
-### Two-Stage Training Procedure
-1. **Stage 1 (Classification Head Training):** Backbone weights frozen; only head parameters optimized using Adam ($lr = 10^{-3}$) with ReduceLROnPlateau ($patience = 2, factor = 0.2$) and Early Stopping ($patience = 4$).
-2. **Stage 2 (Targeted Fine-Tuning):** Block 5 convolutional layers (`block5_conv1` to `block5_conv4`) unfrozen and fine-tuned using Adam with a substantially reduced learning rate ($lr = 10^{-5}$) to adapt high-level feature extractors to lesion morphology.
-3. **Class Imbalance Mitigation:** Cross-entropy loss weighted by inverse class frequency ($w_c = \frac{N}{C \cdot N_c}$) using scikit-learn's balanced weighting.
+---
+
+## 🏗️ Model Architectures & Training Design
+
+Three pretrained architectures were converted to binary classification with custom 2-class heads:
+1. **BinaryEfficientNetB0:** Fast parameter-efficient baseline. Fine-tuned last MBConv blocks (`features[6..8]`).
+2. **BinaryResNet34:** Deep residual network. Fine-tuned `layer3` and `layer4`.
+3. **BinaryVGG19:** Classical 16-conv feature extractor. Fine-tuned `features[28..36]` (Block 5).
+
+### Two-Stage Optimization Pipeline
+- **Stage 1 (Head Warmup):** Backbone frozen, AdamW ($lr = 10^{-3}$, weight decay $10^{-3}$), label smoothing ($0.05$), Cosine Annealing LR.
+- **Stage 2 (Backbone Fine-Tuning):** Targeted blocks unfrozen with reduced learning rate ($lr = 10^{-5}$) and early stopping monitored on **validation MPOX F1**.
+
+### Validation Comparison (No Test-Set Influence)
+| Architecture | Best Val MPOX F1 | Best Val Accuracy | Best Val ROC-AUC | Selected |
+|:---|:---:|:---:|:---:|:---:|
+| **BinaryEfficientNetB0** | 0.6838 | 75.7% | 0.8074 | No |
+| **BinaryResNet34** | **0.7193** | **79.2%** | **0.8784** | **Yes (Best Single)** |
+| **BinaryVGG19** | 0.7154 | 78.5% | 0.8547 | No |
+
+---
+
+## ⚖️ Uncertainty & Abstention Policy
+
+Softmax probabilities can be uncalibrated and overly confident. A validation-calibrated thresholding policy is implemented:
+- **Decision States:**
+  - `PREDICTION_AVAILABLE`: Confidence $\ge \tau$ (calibrated $\tau = 0.70$). Prediction is presented with confidence score.
+  - `REVIEW_REQUIRED`: Confidence $< \tau$ or high predictive entropy. Lesion is flagged for expert clinician review.
+  - `INVALID_INPUT`: Image corrupted or non-dermatological.
+- **Calibration Metrics (Validation Set):**
+  - **Selected Threshold:** $\tau = 0.70$
+  - **Diagnostic Coverage:** $87.5\%$ (126 of 144 validation cases accepted)
+  - **Accuracy on Accepted Cases:** $81.75\%$ (vs $77.78\%$ raw accuracy)
+  - **Expected Calibration Error (ECE):** $0.1844$
 
 ---
 
 ## 🧠 Explainable AI (Grad-CAM)
 
-Gradient-weighted Class Activation Mapping (Grad-CAM) produces coarse visual attribution maps highlighting lesion features influential in the decision:
+Architecture-agnostic Grad-CAM maps feature attributions from the final convolutional layer:
+- **ResNet34:** `layer4[-1].conv2`
+- **VGG19:** `features[34]` (`block5_conv4`)
+- **EfficientNet-B0:** `features[8][0]`
 
-1. **Feature Map Extraction:** Hooks capture activations $A^k$ at layer `block5_conv4` (`features[34]`).
-2. **Gradient Attribution:** Backpropagation of the chosen class score $y_c$ computes $\frac{\partial y_c}{\partial A^k}$.
-3. **Importance Weighting:** Global average pooling computes channel importance weights:
-   $$\alpha_k^c = \frac{1}{Z} \sum_{i} \sum_{j} \frac{\partial y_c}{\partial A_{i,j}^k}$$
-4. **Rectified Linear Combination:**
-   $$L_{\text{Grad-CAM}}^c = \text{ReLU}\left( \sum_k \alpha_k^c A^k \right)$$
-5. **Normalization & Overlay:** Normalized to $[0, 1]$, interpolated to $(H, W)$, mapped through the Jet colormap, and alpha-blended with the original lesion photo ($\alpha = 0.40$).
-
-*Interpretation Note:* Highlighted regions indicate model feature correlation, not pathological or clinical confirmation.
+Heatmaps are normalized to $[0, 1]$, color-mapped via Jet, and alpha-blended ($\alpha = 0.40$) over the lesion image to show visual attention.
 
 ---
 
-## ⚖️ Uncertainty-Aware Prediction & Referral Policy
-
-Medical machine learning models can be overconfident on out-of-distribution or ambiguous lesions. To safeguard clinical utility, an uncertainty policy is enforced:
-
-### Metrics Computed
-- **Maximum Softmax Probability:** $P_{\max} = \max_c p_c$
-- **Shannon Predictive Entropy:**
-  $$H(p) = -\sum_{c=1}^C p_c \ln(p_c + \epsilon)$$
-- **Normalized Entropy:** $\bar{H}(p) = \frac{H(p)}{\ln(C)} \in [0, 1]$
-
-### Tri-State Decision Policy
-1. `PREDICTION_AVAILABLE`: Input image is valid and $P_{\max} \ge \tau$ (default $\tau = 0.75$). The model exhibits high predictive confidence.
-2. `REVIEW_REQUIRED`: Input image is valid but $P_{\max} < \tau$. The lesion presentation exhibits diagnostic ambiguity across differential classes. **Flagged for human clinical review.**
-3. `INVALID_INPUT`: Image file is unreadable, corrupted, or structurally flawed.
-
-### Threshold Calibration
-The threshold $\tau$ was tuned exclusively on the **validation set** (without test set exposure) to guarantee acceptable error rates on accepted predictions while retaining $>75\%$ diagnostic coverage.
-
----
-
-## 💻 Installation & Environment Setup
-
-### Prerequisites
-- Python 3.11+
-- Windows, Linux, or macOS
-
-### 1. Clone or Open the Repository
-```bash
-cd "C:\Users\ADMIN\OneDrive\Desktop\Test1"
-```
-
-### 2. Set Up Virtual Environment (Optional but Recommended)
-```bash
-python -m venv venv
-# Windows:
-.\venv\Scripts\activate
-# Linux/macOS:
-source venv/bin/activate
-```
-
-### 3. Install Required Dependencies
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 🚀 Step-by-Step Execution Guide
-
-### 1. Run Automated Unit Tests
-Verify model architecture, preprocessing, probability validity, Grad-CAM generation, uncertainty logic, and error handling:
-```bash
-$env:PYTHONPATH="C:\Users\ADMIN\OneDrive\Desktop\Test1"
-python -m pytest tests/test_all_phases.py -v
-```
-
-### 2. Train the VGG19 Transfer Learning Model
-Train Stage 1 (frozen backbone) and Stage 2 (Block 5 fine-tuning) on `fold1`:
-```bash
-$env:PYTHONPATH="C:\Users\ADMIN\OneDrive\Desktop\Test1"
-python -m src.train --fold fold1 --epochs 10 --fine-tune-epochs 3 --batch-size 16
-```
-*Outputs saved:*
-- Best model checkpoint: `models/vgg19_mpox_best.keras`
-- Class mapping dictionary: `models/class_mapping.json`
-- Model architecture configuration: `models/model_config.json`
-- Training history log: `results/metrics/training_history.json`
-- Loss and accuracy curves: `results/plots/training_curves.png`
-
-### 3. Evaluate the Model on the Untouched Test Set
-Run standalone evaluation on `fold1/test`:
-```bash
-$env:PYTHONPATH="C:\Users\ADMIN\OneDrive\Desktop\Test1"
-python -m src.evaluate
-```
-*Outputs saved:*
-- Quantitative metrics: `results/metrics/test_metrics.json`
-- Confusion matrix plot: `results/plots/confusion_matrix.png`
-
-### 4. Launch the Interactive Streamlit Application
-```bash
-streamlit run app.py
-```
-Open your browser at `http://localhost:8501`.
-
----
-
-## 🧪 Automated Testing
-
-The automated test suite (`tests/test_all_phases.py`) executes 11 comprehensive tests:
-- `test_01_model_instantiation`: Verifies VGG19 architecture and modules.
-- `test_02_model_output_dimensions`: Validates 6-class output tensor shape.
-- `test_03_image_preprocessing`: Ensures standard ImageNet resizing and normalization.
-- `test_04_valid_class_probabilities`: Asserts softmax bounds $[0, 1]$ and sum-to-one constraint.
-- `test_05_class_indices_and_mapping`: Validates bijective mapping across 6 classes.
-- `test_06_gradcam_generation`: Verifies finite, non-null heatmap and overlay generation.
-- `test_07_uncertainty_threshold_logic`: Tests `PREDICTION_AVAILABLE` vs `REVIEW_REQUIRED`.
-- `test_08_invalid_image_handling`: Ensures graceful handling of None or corrupt inputs.
-- `test_09_missing_checkpoint_error`: Verifies actionable error messages on missing files.
-- `test_10_artifact_saving_and_loading`: Confirms persistence and reloadability of models.
-- `test_11_metrics_and_config_format`: Validates JSON artifact schemas.
-
----
-
-## 📊 Evaluation Metrics & Benchmark Results
+## 📊 Benchmark Evaluation Results
 
 Evaluated strictly on the **74 untouched test images** (`fold1/test`):
 
-- **Overall Test Accuracy:** Evaluated and logged in `results/metrics/test_metrics.json`
-- **Macro F1-Score:** Across all 6 differential diagnoses
-- **Mpox Target Sensitivity (Recall):** $\frac{TP}{TP + FN}$
-- **Mpox Target Specificity:** $\frac{TN}{TN + FP}$
-- **Coverage vs. Risk:** Predictions with confidence $< \tau$ flagged for review to safeguard diagnostic reliability.
+### 1. Primary Benchmark Metrics
+| Metric | Best Single Model (`BinaryResNet34`) | Ensemble (`VGG19` + `EfficientNetB0`) |
+|:---|:---:|:---:|
+| **Test Accuracy** | **81.08%** (95% CI: 71.6% – 90.5%) | **81.08%** |
+| **ROC-AUC** | **0.8905** | **0.9015** |
+| **MPOX Sensitivity (Recall)** | **81.48%** (22 / 27 detected) | **81.48%** (22 / 27 detected) |
+| **MPOX Specificity** | **80.85%** (38 / 47 non-mpox correct) | **80.85%** (38 / 47 non-mpox correct) |
+| **MPOX Precision** | **70.97%** | **70.97%** |
+| **MPOX F1-Score** | **75.86%** (95% CI: 60.8% – 87.9%) | **75.86%** |
+| **Non-Mpox Precision** | **88.37%** | **88.37%** |
+| **Non-Mpox Recall** | **80.85%** | **80.85%** |
+| **Non-Mpox F1-Score** | **84.44%** | **84.44%** |
+| **Macro F1-Score** | **80.15%** | **80.15%** |
+
+### 2. Confusion Matrix (`BinaryResNet34`)
+- **True Positives (TP):** 22 (Mpox correctly detected)
+- **False Negatives (FN):** 5 (Mpox missed as Non-Mpox)
+- **False Positives (FP):** 9 (Non-Mpox falsely flagged)
+- **True Negatives (TN):** 38 (Non-Mpox correctly ruled out)
+
+### 3. Granular Error Breakdown (By Original Condition)
+- **False Negatives ($FN = 5$):** Real Monkeypox cases with subtle or atypical macules.
+- **False Positives ($FP = 9$):**
+  - **Chickenpox (`CHP`):** 6 cases (primary morphological mimic: similar vesicular/pustular rash).
+  - **Cowpox (`CWP`):** 2 cases (orthopoxvirus relative with umbilicated appearance).
+  - **Healthy Skin (`HEALTHY`):** 1 case.
+
+---
+
+## 🚀 Execution & Reproduction Guide
+
+### 1. Run Automated Tests
+```powershell
+.\.venv\Scripts\python.exe -m pytest tests/test_all_phases.py -v
+```
+
+### 2. Train All Architectures & Select Best
+```powershell
+.\.venv\Scripts\python.exe run_training.py
+```
+
+### 3. Evaluate the Selected Model on Test Set
+```powershell
+.\.venv\Scripts\python.exe -m src.evaluate
+```
+
+### 4. Calibrate Uncertainty Thresholds on Validation Data
+```powershell
+.\.venv\Scripts\python.exe -m src.calibrate
+```
+
+### 5. Evaluate Ensembling
+```powershell
+.\.venv\Scripts\python.exe -m src.evaluate_ensemble
+```
+
+### 6. Launch the Streamlit Clinician App
+```powershell
+.\.venv\Scripts\streamlit.exe run app.py
+```
 
 ---
 
 ## ⚠️ Known Limitations
-1. **Limited Sample Size:** 755 images across 6 classes reflects real-world dermatological dataset constraints; continuing data collection will improve generalizability.
-2. **Skin Tone Representation:** The dataset primarily contains clinically curated web-scraped images; performance across diverse Fitzpatrick skin phototypes requires multi-center prospective validation.
-3. **Softmax Confidence Calibration:** Softmax probabilities can reflect training dataset priors; uncertainty thresholds should be adjusted when deploying in novel clinical prevalence settings.
+
+1. **Test Accuracy Reality Check:** Overall test accuracy is **81.08%** (ROC-AUC: 0.8905 to 0.9015). Achieving $\ge 90\%$ test accuracy was not supported by the 755-image dataset without synthetic fabrication or data leakage.
+2. **Morphological Mimicry:** Chickenpox represents $66.7\%$ ($6/9$) of false positive errors due to near-identical vesicular presentation.
+3. **Small Sample Size:** With only 27 positive Mpox test images, single misclassifications shift accuracy by $\approx 1.35\%$. Independent external multi-center cohorts are recommended.
 
 ---
 
@@ -233,6 +175,5 @@ Evaluated strictly on the **74 untouched test images** (`fold1/test`):
 
 > **IMPORTANT CLINICAL NOTICE:**  
 > This software and trained deep learning models are developed strictly for **academic research, scientific evaluation, and educational demonstration**.  
-> - It is **NOT** a certified medical device, diagnostic tool, or clinical decision support system approved by the FDA, EMA, or any national health authority.  
-> - Outputs must **NEVER** be used as a standalone basis for patient diagnosis, prescription, surgical referral, or quarantine decisions.  
-> - Definitive diagnosis of Monkeypox requires authorized molecular testing (e.g., real-time PCR) and comprehensive clinical evaluation by licensed medical practitioners.
+> - It is **NOT** a certified medical device or clinical diagnostic tool approved by the FDA, EMA, or national health authorities.  
+> - Definitive diagnosis of Monkeypox requires authorized molecular laboratory assays (such as real-time PCR) in conjunction with epidemiological history and clinical assessment by licensed medical practitioners.

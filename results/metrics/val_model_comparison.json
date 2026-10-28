@@ -1,0 +1,36 @@
+{
+    "validation_comparison": [
+        {
+            "arch": "BinaryEfficientNetB0",
+            "best_val_f1_mpox": 0.6837606837606838,
+            "best_val_acc": 0.7569444444444444,
+            "best_val_auc": 0.8073544433094995,
+            "save_path": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\models\\binary_efficientnet_b0_best.pt",
+            "total_epochs": 15
+        },
+        {
+            "arch": "BinaryResNet34",
+            "best_val_f1_mpox": 0.7192982456140351,
+            "best_val_acc": 0.7916666666666666,
+            "best_val_auc": 0.8784473953013279,
+            "save_path": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\models\\binary_resnet34_best.pt",
+            "total_epochs": 20
+        },
+        {
+            "arch": "BinaryVGG19",
+            "best_val_f1_mpox": 0.7154471544715447,
+            "best_val_acc": 0.7847222222222222,
+            "best_val_auc": 0.8547497446373851,
+            "save_path": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\models\\binary_vgg19_best.pt",
+            "total_epochs": 13
+        }
+    ],
+    "selected": {
+        "arch": "BinaryResNet34",
+        "best_val_f1_mpox": 0.7192982456140351,
+        "best_val_acc": 0.7916666666666666,
+        "best_val_auc": 0.8784473953013279,
+        "save_path": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\models\\binary_resnet34_best.pt",
+        "total_epochs": 20
+    }
+}

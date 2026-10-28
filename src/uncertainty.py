@@ -1,269 +1,143 @@
-import json
-from pathlib import Path
-from typing import Dict, Any, Tuple, Optional, List, Union
+"""
+src/uncertainty.py — Binary Uncertainty & Decision Support Module.
+
+Maps model probabilities into the Master Prompt's four mandated clinical decision states:
+    1. MPOX_SUSPECTED
+    2. MPOX_NOT_DETECTED
+    3. INCONCLUSIVE_REFER_FOR_PCR
+    4. INVALID_IMAGE
+
+Also provides backward-compatible state aliases (PREDICTION_AVAILABLE, REVIEW_REQUIRED, INVALID_INPUT).
+"""
+
+import math
 import numpy as np
-import matplotlib.pyplot as plt
+from typing import Optional, Union, List
 
 from src.config import (
-    CLASS_CODES,
-    CLASS_NAMES,
-    CODE_TO_NAME,
-    NUM_CLASSES,
     DEFAULT_CONFIDENCE_THRESHOLD,
+    STATE_MPOX_SUSPECTED,
+    STATE_MPOX_NOT_DETECTED,
+    STATE_INCONCLUSIVE,
+    STATE_INVALID_IMAGE,
     STATE_PREDICTION_AVAILABLE,
     STATE_REVIEW_REQUIRED,
     STATE_INVALID_INPUT,
-    UNCERTAINTY_METRICS_PATH,
-    RELIABILITY_PLOT
+    MPOX_CLASS_INDEX,
+    NON_MPOX_CLASS_INDEX,
+    BINARY_CLASS_NAMES,
 )
 
+_NUM_CLASSES = 2  # Binary: 0=NON_MPOX, 1=MPOX
 
-def calculate_predictive_entropy(probabilities: np.ndarray, eps: float = 1e-12) -> Tuple[float, float]:
-    """
-    Computes Shannon predictive entropy and normalized entropy for a discrete probability vector:
-    H(p) = - sum(p_i * ln(p_i + eps))
-    Normalized: H_norm(p) = H(p) / ln(num_classes) in [0, 1]
-    """
-    probs = np.clip(probabilities, eps, 1.0)
-    entropy = -float(np.sum(probs * np.log(probs)))
-    max_entropy = np.log(len(probabilities))
-    normalized_entropy = float(entropy / max_entropy) if max_entropy > 0 else 0.0
-    return entropy, normalized_entropy
+
+def calculate_predictive_entropy(probs: np.ndarray) -> float:
+    """Shannon entropy in nats, clamped to avoid log(0)."""
+    p = np.clip(probs, 1e-9, 1.0)
+    return float(-np.sum(p * np.log(p)))
 
 
 def assess_prediction_uncertainty(
-    probabilities: Optional[Union[np.ndarray, List[float]]],
+    probs: Optional[Union[np.ndarray, List[float]]],
     threshold: float = DEFAULT_CONFIDENCE_THRESHOLD,
-    is_valid_input: bool = True
-) -> Dict[str, Any]:
+    is_valid_input: bool = True,
+) -> dict:
     """
-    Evaluates model probabilities and applies the human-in-the-loop decision policy.
-    
-    States:
-    - INVALID_INPUT: Corrupt, unreadable, or missing image.
-    - REVIEW_REQUIRED: Maximum probability falls below threshold (high predictive uncertainty).
-    - PREDICTION_AVAILABLE: Maximum probability meets or exceeds threshold.
-    
-    Medical Caution:
-    Softmax confidence is an indicator of model agreement with training distribution,
-    NOT a certified clinical diagnosis. Low confidence warrants clinical specialist review.
+    Returns structured clinical screening decision assessment for binary Mpox detection.
+
+    Args:
+        probs:          Array of [non_mpox_prob, mpox_prob] from model.predict_proba().
+        threshold:      Confidence threshold calibrated on validation data.
+        is_valid_input: Set False for corrupt/unreadable images.
+
+    Returns dict with:
+        decision_state:       MPOX_SUSPECTED / MPOX_NOT_DETECTED / INCONCLUSIVE_REFER_FOR_PCR / INVALID_IMAGE
+        predicted_class:      "MPOX" or "NON_MPOX"
+        predicted_index:      0 or 1
+        mpox_probability:     float [0, 1]
+        non_mpox_probability: float [0, 1]
+        calibrated_model_score: float [0, 1]
+        confidence:           max(probs)
+        predictive_entropy:   float (nats)
+        normalised_entropy:   float [0, 1]
+        review_recommended:   bool
+        recommendation_reason: str
     """
-    if not is_valid_input or probabilities is None:
-        return {
-            "decision_state": STATE_INVALID_INPUT,
-            "predicted_idx": None,
-            "predicted_code": None,
-            "predicted_name": None,
-            "confidence": 0.0,
-            "predictive_entropy": None,
-            "normalized_entropy": None,
-            "threshold": threshold,
-            "review_recommended": True,
-            "recommendation_reason": "Input image could not be verified or processed reliably.",
-            "probabilities_by_class": {}
-        }
+    if not is_valid_input or probs is None:
+        return _invalid_result("Input image is invalid, unreadable, or corrupted.")
 
-    probs = np.array(probabilities, dtype=np.float32)
-    if np.isnan(probs).any() or np.sum(probs) <= 0:
-        return {
-            "decision_state": STATE_INVALID_INPUT,
-            "predicted_idx": None,
-            "predicted_code": None,
-            "predicted_name": None,
-            "confidence": 0.0,
-            "predictive_entropy": None,
-            "normalized_entropy": None,
-            "threshold": threshold,
-            "review_recommended": True,
-            "recommendation_reason": "Prediction produced invalid numerical outputs (NaN/Zero sum).",
-            "probabilities_by_class": {}
-        }
+    p = np.asarray(probs, dtype=np.float64).flatten()
 
-    # Normalize if not strictly summing to 1
-    probs = probs / np.sum(probs)
-    pred_idx = int(np.argmax(probs))
-    confidence = float(probs[pred_idx])
-    entropy, norm_entropy = calculate_predictive_entropy(probs)
+    if len(p) != _NUM_CLASSES:
+        return _invalid_result(f"Expected {_NUM_CLASSES} class probabilities, got {len(p)}.")
+    if not np.all(np.isfinite(p)):
+        return _invalid_result("Probability array contains NaN or Inf values.")
+    if np.any(p < 0) or np.any(p > 1 + 1e-5):
+        return _invalid_result("Probability values out of [0, 1] range.")
 
-    prob_dict = {CLASS_CODES[i]: float(probs[i]) for i in range(len(CLASS_CODES))}
-    predicted_code = CLASS_CODES[pred_idx]
-    predicted_name = CODE_TO_NAME[predicted_code]
+    # Normalise to sum = 1
+    p = p / p.sum()
 
-    if confidence >= threshold:
-        decision_state = STATE_PREDICTION_AVAILABLE
-        review_recommended = False
+    mpox_prob     = float(p[MPOX_CLASS_INDEX])
+    non_mpox_prob = float(p[NON_MPOX_CLASS_INDEX])
+    confidence    = float(np.max(p))
+    pred_idx      = int(np.argmax(p))
+    pred_class    = "MPOX" if pred_idx == MPOX_CLASS_INDEX else "NON_MPOX"
+
+    entropy       = calculate_predictive_entropy(p)
+    max_entropy   = math.log(_NUM_CLASSES)  # ln(2) ≈ 0.693
+    norm_entropy  = float(entropy / max_entropy) if max_entropy > 0 else 0.0
+
+    # Decision triage
+    if confidence < threshold or norm_entropy > 0.85:
+        state = STATE_INCONCLUSIVE
+        review = True
         reason = (
-            f"Prediction meets acceptance criteria (Confidence {confidence*100:.1f}% >= threshold {threshold*100:.1f}%)."
+            f"Prediction confidence ({confidence*100:.1f}%) is below calibrated threshold ({threshold*100:.0f}%) "
+            f"or predictive entropy ({norm_entropy:.2f}) indicates diagnostic ambiguity. "
+            "Lesion appearance resembles confounding look-alikes. Referral for formal clinical evaluation and PCR molecular testing is strongly recommended."
         )
     else:
-        decision_state = STATE_REVIEW_REQUIRED
-        review_recommended = True
-        reason = (
-            f"Prediction does not meet acceptance criteria (Confidence {confidence*100:.1f}% < threshold {threshold*100:.1f}%). "
-            f"Significant ambiguity among differential diagnoses. Dermatologist/clinical review recommended."
-        )
+        review = False
+        if pred_idx == MPOX_CLASS_INDEX:
+            state = STATE_MPOX_SUSPECTED
+            reason = (
+                f"Model score ({mpox_prob*100:.1f}%) meets threshold for Mpox suspicion with {confidence*100:.1f}% confidence. "
+                "Prompt clinical review, isolation precautions, and PCR confirmation recommended."
+            )
+        else:
+            state = STATE_MPOX_NOT_DETECTED
+            reason = (
+                f"Model score ({mpox_prob*100:.1f}%) does not meet Mpox suspicion threshold ({confidence*100:.1f}% confidence non-Mpox). "
+                "Does not rule out infection if clinical suspicion persists."
+            )
 
     return {
-        "decision_state": decision_state,
-        "predicted_idx": pred_idx,
-        "predicted_code": predicted_code,
-        "predicted_name": predicted_name,
-        "confidence": confidence,
-        "predictive_entropy": entropy,
-        "normalized_entropy": norm_entropy,
-        "threshold": threshold,
-        "review_recommended": review_recommended,
-        "recommendation_reason": reason,
-        "probabilities_by_class": prob_dict
+        "decision_state":         state,
+        "predicted_class":        pred_class,
+        "predicted_index":        pred_idx,
+        "mpox_probability":       mpox_prob,
+        "non_mpox_probability":   non_mpox_prob,
+        "calibrated_model_score": mpox_prob,
+        "confidence":             confidence,
+        "predictive_entropy":     entropy,
+        "normalised_entropy":     norm_entropy,
+        "review_recommended":     review,
+        "recommendation_reason":  reason,
     }
 
 
-def compute_expected_calibration_error(
-    probabilities: np.ndarray,
-    labels: np.ndarray,
-    n_bins: int = 10
-) -> Tuple[float, List[Dict[str, float]]]:
-    """
-    Computes Expected Calibration Error (ECE) across discrete confidence bins.
-    ECE = sum_b (|acc(B_b) - conf(B_b)| * |B_b| / N)
-    """
-    preds = np.argmax(probabilities, axis=1)
-    confs = np.max(probabilities, axis=1)
-    corrects = (preds == labels)
-
-    bin_boundaries = np.linspace(0.0, 1.0, n_bins + 1)
-    ece = 0.0
-    bin_details = []
-
-    for i in range(n_bins):
-        bin_lower = bin_boundaries[i]
-        bin_upper = bin_boundaries[i + 1]
-        in_bin = (confs > bin_lower) & (confs <= bin_upper) if i > 0 else (confs >= bin_lower) & (confs <= bin_upper)
-        prop_in_bin = np.mean(in_bin)
-
-        if prop_in_bin > 0:
-            accuracy_in_bin = float(np.mean(corrects[in_bin]))
-            avg_confidence_in_bin = float(np.mean(confs[in_bin]))
-            abs_diff = abs(accuracy_in_bin - avg_confidence_in_bin)
-            ece += abs_diff * prop_in_bin
-
-            bin_details.append({
-                "bin_lower": float(bin_lower),
-                "bin_upper": float(bin_upper),
-                "sample_count": int(np.sum(in_bin)),
-                "accuracy": accuracy_in_bin,
-                "confidence": avg_confidence_in_bin,
-                "calibration_gap": float(abs_diff)
-            })
-
-    return float(ece), bin_details
-
-
-def tune_threshold_on_validation(
-    val_probs: np.ndarray,
-    val_labels: np.ndarray,
-    target_max_error: float = 0.10,
-    min_coverage: float = 0.70
-) -> Dict[str, Any]:
-    """
-    Tunes abstention threshold strictly using validation data.
-    Sweeps candidate thresholds to analyze coverage vs risk trade-off.
-    Never inspects or uses test-set samples.
-    """
-    candidate_thresholds = np.linspace(0.50, 0.95, 46)
-    val_confs = np.max(val_probs, axis=1)
-    val_preds = np.argmax(val_probs, axis=1)
-    val_corrects = (val_preds == val_labels)
-    total_val = len(val_labels)
-
-    sweep_results = []
-    selected_threshold = DEFAULT_CONFIDENCE_THRESHOLD
-    best_tradeoff_score = -float("inf")
-
-    for thresh in candidate_thresholds:
-        accepted_mask = val_confs >= thresh
-        accepted_count = int(np.sum(accepted_mask))
-        flagged_count = total_val - accepted_count
-        coverage = float(accepted_count / total_val)
-
-        if accepted_count > 0:
-            accepted_acc = float(np.mean(val_corrects[accepted_mask]))
-            accepted_error = float(1.0 - accepted_acc)
-        else:
-            accepted_acc = 1.0
-            accepted_error = 0.0
-
-        sweep_results.append({
-            "threshold": float(round(thresh, 4)),
-            "coverage": coverage,
-            "accepted_count": accepted_count,
-            "flagged_count": flagged_count,
-            "accepted_accuracy": accepted_acc,
-            "accepted_error_rate": accepted_error
-        })
-
-        # Selection heuristic: Maximize coverage while error rate <= target_max_error
-        # Objective score combines high accuracy and acceptable coverage
-        if coverage >= min_coverage:
-            score = (accepted_acc * 1.5) + (coverage * 0.5) - (accepted_error * 2.0)
-            if score > best_tradeoff_score:
-                best_tradeoff_score = score
-                selected_threshold = float(round(thresh, 2))
-
-    ece, bin_details = compute_expected_calibration_error(val_probs, val_labels)
-
-    results = {
-        "methodology": "Validation-set risk-coverage threshold tuning (no test set leakage)",
-        "selected_threshold": selected_threshold,
-        "validation_samples_count": total_val,
-        "expected_calibration_error": ece,
-        "calibration_bins": bin_details,
-        "threshold_sweep_summary": sweep_results[:10] + sweep_results[-5:]
+def _invalid_result(reason: str) -> dict:
+    return {
+        "decision_state":         STATE_INVALID_IMAGE,
+        "predicted_class":        "UNKNOWN",
+        "predicted_index":        -1,
+        "mpox_probability":       0.0,
+        "non_mpox_probability":   0.0,
+        "calibrated_model_score": 0.0,
+        "confidence":             0.0,
+        "predictive_entropy":     float(math.log(_NUM_CLASSES)),
+        "normalised_entropy":     1.0,
+        "review_recommended":     True,
+        "recommendation_reason":  reason,
     }
-
-    return results
-
-
-def plot_reliability_diagram(
-    calibration_bins: List[Dict[str, float]],
-    ece: float,
-    save_path: Path = RELIABILITY_PLOT
-):
-    """
-    Renders and saves a reliability diagram showing confidence vs observed accuracy.
-    """
-    save_path.parent.mkdir(parents=True, exist_ok=True)
-    fig, ax = plt.subplots(figsize=(7, 6))
-
-    confs = [b["confidence"] for b in calibration_bins]
-    accs = [b["accuracy"] for b in calibration_bins]
-    counts = [b["sample_count"] for b in calibration_bins]
-
-    # Perfect calibration reference line
-    ax.plot([0, 1], [0, 1], "k--", label="Perfect Calibration (y = x)")
-
-    # Bar plot for bins
-    bin_centers = [(b["bin_lower"] + b["bin_upper"]) / 2.0 for b in calibration_bins]
-    ax.bar(
-        bin_centers,
-        accs,
-        width=0.08,
-        alpha=0.6,
-        color="royalblue",
-        edgecolor="black",
-        label=f"Observed Accuracy (ECE = {ece:.3f})"
-    )
-
-    ax.scatter(bin_centers, confs, color="red", zorder=5, label="Mean Confidence")
-    ax.set_title("Reliability Diagram (Validation Set Calibration)", fontsize=12, fontweight="bold")
-    ax.set_xlabel("Confidence", fontsize=11)
-    ax.set_ylabel("Empirical Accuracy", fontsize=11)
-    ax.set_xlim([0, 1])
-    ax.set_ylim([0, 1])
-    ax.legend(loc="upper left")
-    ax.grid(True, linestyle=":", alpha=0.6)
-
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=300)
-    plt.close()
-    print(f"Reliability diagram saved to {save_path}")

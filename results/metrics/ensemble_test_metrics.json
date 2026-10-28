@@ -1,0 +1,114 @@
+{
+    "model_name": "ensemble",
+    "dataset_fold": "fold1",
+    "test_samples_count": 74,
+    "accuracy": 0.7837837837837838,
+    "macro_f1": 0.779276605747194,
+    "macro_precision": 0.8143939393939394,
+    "macro_recall": 0.7700066137566136,
+    "mpox_target_evaluation": {
+        "target_code": "MKP",
+        "target_name": "Monkeypox",
+        "sensitivity_recall": 0.7777777777777778,
+        "specificity": 0.851063829787234,
+        "true_positives": 21,
+        "false_negatives": 6,
+        "false_positives": 7,
+        "true_negatives": 40
+    },
+    "per_class_metrics": {
+        "CHP": {
+            "name": "Chickenpox",
+            "precision": 1.0,
+            "recall": 0.5555555555555556,
+            "f1_score": 0.7142857142857143,
+            "support": 9
+        },
+        "CWP": {
+            "name": "Cowpox",
+            "precision": 0.6666666666666666,
+            "recall": 0.5714285714285714,
+            "f1_score": 0.6153846153846154,
+            "support": 7
+        },
+        "HEALTHY": {
+            "name": "Healthy",
+            "precision": 0.6363636363636364,
+            "recall": 0.7777777777777778,
+            "f1_score": 0.7,
+            "support": 9
+        },
+        "HFMD": {
+            "name": "HFMD",
+            "precision": 0.8333333333333334,
+            "recall": 0.9375,
+            "f1_score": 0.8823529411764706,
+            "support": 16
+        },
+        "MKP": {
+            "name": "Monkeypox",
+            "precision": 0.75,
+            "recall": 0.7777777777777778,
+            "f1_score": 0.7636363636363637,
+            "support": 27
+        },
+        "MSL": {
+            "name": "Measles",
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 6
+        }
+    },
+    "confusion_matrix": [
+        [
+            5,
+            0,
+            0,
+            0,
+            4,
+            0
+        ],
+        [
+            0,
+            4,
+            0,
+            1,
+            2,
+            0
+        ],
+        [
+            0,
+            0,
+            7,
+            1,
+            1,
+            0
+        ],
+        [
+            0,
+            0,
+            1,
+            15,
+            0,
+            0
+        ],
+        [
+            0,
+            2,
+            3,
+            1,
+            21,
+            0
+        ],
+        [
+            0,
+            0,
+            0,
+            0,
+            0,
+            6
+        ]
+    ],
+    "classification_report_text": "                   precision    recall  f1-score   support\n\n CHP (Chickenpox)     1.0000    0.5556    0.7143         9\n     CWP (Cowpox)     0.6667    0.5714    0.6154         7\nHEALTHY (Healthy)     0.6364    0.7778    0.7000         9\n      HFMD (HFMD)     0.8333    0.9375    0.8824        16\n  MKP (Monkeypox)     0.7500    0.7778    0.7636        27\n    MSL (Measles)     1.0000    1.0000    1.0000         6\n\n         accuracy                         0.7838        74\n        macro avg     0.8144    0.7700    0.7793        74\n     weighted avg     0.7970    0.7838    0.7807        74\n"
+}

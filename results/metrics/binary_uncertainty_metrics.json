@@ -1,0 +1,169 @@
+{
+    "selected_threshold": 0.7,
+    "conformal_q_val": 0.8423137068748474,
+    "expected_calibration_error": 0.18438946093536085,
+    "calibration_bins": [
+        {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 44,
+            "avg_conf": 0.04883989319205284,
+            "avg_accuracy": 0.0
+        },
+        {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 24,
+            "avg_conf": 0.15760183334350586,
+            "avg_accuracy": 0.4166666666666667
+        },
+        {
+            "bin_lo": 0.2,
+            "bin_hi": 0.3,
+            "count": 5,
+            "avg_conf": 0.24792075157165527,
+            "avg_accuracy": 0.0
+        },
+        {
+            "bin_lo": 0.3,
+            "bin_hi": 0.4,
+            "count": 7,
+            "avg_conf": 0.3523959815502167,
+            "avg_accuracy": 0.5714285714285714
+        },
+        {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 5,
+            "avg_conf": 0.4520808756351471,
+            "avg_accuracy": 0.0
+        },
+        {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6,
+            "count": 1,
+            "avg_conf": 0.5433534383773804,
+            "avg_accuracy": 0.0
+        },
+        {
+            "bin_lo": 0.6,
+            "bin_hi": 0.7,
+            "count": 5,
+            "avg_conf": 0.6164965629577637,
+            "avg_accuracy": 0.2
+        },
+        {
+            "bin_lo": 0.7,
+            "bin_hi": 0.8,
+            "count": 7,
+            "avg_conf": 0.7356529235839844,
+            "avg_accuracy": 0.8571428571428571
+        },
+        {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 8,
+            "avg_conf": 0.8468573689460754,
+            "avg_accuracy": 0.625
+        },
+        {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 38,
+            "avg_conf": 0.971084475517273,
+            "avg_accuracy": 0.7631578947368421
+        }
+    ],
+    "threshold_sweep": [
+        {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted": 144,
+            "accuracy": 0.7778,
+            "error": 0.2222,
+            "score": 1.2222
+        },
+        {
+            "threshold": 0.55,
+            "coverage": 0.9792,
+            "accepted": 141,
+            "accuracy": 0.7801,
+            "error": 0.2199,
+            "score": 1.2201
+        },
+        {
+            "threshold": 0.6,
+            "coverage": 0.9583,
+            "accepted": 138,
+            "accuracy": 0.7754,
+            "error": 0.2246,
+            "score": 1.1929
+        },
+        {
+            "threshold": 0.65,
+            "coverage": 0.9028,
+            "accepted": 130,
+            "accuracy": 0.8077,
+            "error": 0.1923,
+            "score": 1.2783
+        },
+        {
+            "threshold": 0.7,
+            "coverage": 0.875,
+            "accepted": 126,
+            "accuracy": 0.8175,
+            "error": 0.1825,
+            "score": 1.2986
+        },
+        {
+            "threshold": 0.75,
+            "coverage": 0.8194,
+            "accepted": 118,
+            "accuracy": 0.8136,
+            "error": 0.1864,
+            "score": 1.2572
+        },
+        {
+            "threshold": 0.8,
+            "coverage": 0.7917,
+            "accepted": 114,
+            "accuracy": 0.807,
+            "error": 0.193,
+            "score": 1.2204
+        },
+        {
+            "threshold": 0.85,
+            "coverage": 0.6597,
+            "accepted": 95,
+            "accuracy": 0.8737,
+            "error": 0.1263,
+            "score": 1.3878
+        },
+        {
+            "threshold": 0.9,
+            "coverage": 0.5694,
+            "accepted": 82,
+            "accuracy": 0.8902,
+            "error": 0.1098,
+            "score": 1.4006
+        },
+        {
+            "threshold": 0.95,
+            "coverage": 0.3889,
+            "accepted": 56,
+            "accuracy": 0.9107,
+            "error": 0.0893,
+            "score": 1.3819
+        }
+    ],
+    "validation_accuracy": 0.7778,
+    "final_threshold_evaluation": {
+        "threshold": 0.7,
+        "coverage": 0.875,
+        "accepted_count": 126,
+        "flagged_count": 18,
+        "accepted_accuracy": 0.8175,
+        "accepted_error": 0.1825,
+        "ece": 0.184389
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "best_ensemble_pair": [
+        "VGG19",
+        "ResNet34"
+    ],
+    "best_ensemble_weights": [
+        0.6000000000000001,
+        0.3999999999999999
+    ],
+    "ensemble_val_f1": 0.8307692307692308,
+    "best_individual_val_f1": 0.7192982456140351,
+    "best_individual_name": "BinaryResNet34",
+    "ensemble_justified": true,
+    "test_accuracy": 0.8378378378378378,
+    "test_mpox_f1": 0.8,
+    "test_macro_f1": 0.8318181818181818,
+    "test_auc": 0.9196217494089834,
+    "test_sensitivity": 0.8888888888888888,
+    "test_specificity": 0.8085106382978723,
+    "test_precision": 0.7272727272727273,
+    "test_confusion_matrix": [
+        [
+            38,
+            9
+        ],
+        [
+            3,
+            24
+        ]
+    ]
+}
