@@ -32,5 +32,10 @@
         "best_val_auc": 0.8784473953013279,
         "save_path": "C:\\Users\\Tharaneesh.k\\Downloads\\Mpox-Detection\\models\\binary_resnet34_best.pt",
         "total_epochs": 20
+    },
+    "MultimodalMpoxClassifier": {
+        "val_f1": 1.0,
+        "val_accuracy": 1.0,
+        "visual_backbone": "VGG19"
     }
 }

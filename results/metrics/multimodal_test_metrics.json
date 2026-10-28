@@ -1,0 +1,80 @@
+{
+    "architecture": "MultimodalMpoxClassifier",
+    "selected_visual_backbone": "VGG19",
+    "val_f1_score": 1.0,
+    "val_accuracy": 1.0,
+    "full_clinical": {
+        "accuracy": 1.0,
+        "sensitivity": 1.0,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "mpox_f1": 1.0,
+        "macro_f1": 1.0,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0,
+        "confusion_matrix": [
+            [
+                47,
+                0
+            ],
+            [
+                0,
+                27
+            ]
+        ],
+        "wilson_ci_acc": [
+            0.9506504113541276,
+            1.0
+        ],
+        "wilson_ci_sens": [
+            0.8754454136114904,
+            1.0
+        ],
+        "wilson_ci_spec": [
+            0.9244426798356679,
+            1.0
+        ],
+        "total_test": 74,
+        "correct": 74,
+        "errors_count": 0,
+        "condition_error_rates": {
+            "CHP": {
+                "total": 9,
+                "errors": 0
+            },
+            "CWP": {
+                "total": 7,
+                "errors": 0
+            },
+            "HEALTHY": {
+                "total": 9,
+                "errors": 0
+            },
+            "HFMD": {
+                "total": 16,
+                "errors": 0
+            },
+            "MKP": {
+                "total": 27,
+                "errors": 0
+            },
+            "MSL": {
+                "total": 6,
+                "errors": 0
+            }
+        },
+        "errors": []
+    },
+    "noisy_clinical_15pct_missing": {
+        "accuracy": 0.9459459459459459,
+        "sensitivity": 0.8888888888888888,
+        "specificity": 0.9787234042553191,
+        "errors_count": 4
+    },
+    "zero_clinical_image_only": {
+        "accuracy": 0.7972972972972973,
+        "sensitivity": 0.8148148148148148,
+        "specificity": 0.7872340425531915,
+        "errors_count": 15
+    }
+}
